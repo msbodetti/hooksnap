@@ -1,9 +1,10 @@
 import { defineStore } from "pinia";
 import http from "@/services/http";
+import type {Account} from "@/types/account";
 
 export const useAccountStore = defineStore("account", {
   state: () => ({
-    account: [],
+    account: {} as Account,
   }),
   actions: {
     async fetchAccount() {
