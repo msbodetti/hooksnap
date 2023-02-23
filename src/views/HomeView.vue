@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import MyAccount from "../components/MyAccount.vue";
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-     This is the home view
-  </h1>
+  <h2
+    class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 text-center"
+  >
+    MY ACCOUNT
+  </h2>
+  <MyAccount />
 </template>
