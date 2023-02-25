@@ -11,14 +11,14 @@ export const useProfileStore = defineStore("profiles", {
   }),
   actions: {
     async fetchProfiles() {
-      const { data } = await http.get("/api/v1/profiles");
+      const { data } = await http.get("/profiles");
       this.profiles = data.profiles;
 
       // store data in sessionStorage
       sessionStorage.setItem("profiles", JSON.stringify(this.profiles));
     },
     async fetchProfile(profileId: number) {
-      const { data } = await http.get(`/api/v1/profile/${profileId}`);
+      const { data } = await http.get(`/profile/${profileId}`);
       this.profile = data;
     },
   },

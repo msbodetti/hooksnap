@@ -9,7 +9,7 @@ export const useAccountStore = defineStore("account", {
   }),
   actions: {
     async fetchAccount() {
-      const { data } = await http.get("/api/v1/account");
+      const { data } = await http.get("/account");
       this.account = data;
       // store data in sessionStorage
       sessionStorage.setItem("account", JSON.stringify(this.account));

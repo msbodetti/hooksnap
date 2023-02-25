@@ -13,7 +13,7 @@ export const useFavouritesStore = defineStore("favourites", {
   }),
   actions: {
     async fetchFavourites() {
-      const { data } = await http.get("/api/v1/favorites");
+      const { data } = await http.get("/favorites");
       this.favourites = data.favorites["123456"];
       // store data in sessionStorage
       sessionStorage.setItem("favourites", JSON.stringify(this.favourites));
@@ -22,7 +22,7 @@ export const useFavouritesStore = defineStore("favourites", {
       if (this.favourites.length > 0) {
         for (let i = 0; i < this.favourites.length; i++) {
           const profileId = this.favourites[i];
-          const { data } = await http.get(`/api/v1/profile/${profileId}`);
+          const { data } = await http.get(`/profile/${profileId}`);
           if (
             !this.favouriteProfiles.some(
               (profile: Profile) => profile.id === data.id
@@ -37,7 +37,7 @@ export const useFavouritesStore = defineStore("favourites", {
       }
     },
     async addFavourite(profileId: number) {
-      const response = await http.post("/api/v1/favorites", {
+      const response = await http.post("/favorites", {
         profileId,
       });
       if (response.status === 200) {
@@ -47,7 +47,7 @@ export const useFavouritesStore = defineStore("favourites", {
       }
     },
     async removeFavourite(profileId: number) {
-      const response = await http.delete(`/api/v1/favorites/${profileId}`);
+      const response = await http.delete(`/favorites/${profileId}`);
       //check if response is 200
       if (response.status === 200) {
         this.favourites = this.favourites.filter(

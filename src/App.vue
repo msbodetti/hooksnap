@@ -7,8 +7,9 @@ import { RouterLink, RouterView } from "vue-router";
     <div
       class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
     >
-      <a
+      <RouterLink
         class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        to="/"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +26,7 @@ import { RouterLink, RouterView } from "vue-router";
           ></path>
         </svg>
         <span class="ml-3 text-xl">HookSnap</span>
-      </a>
+      </RouterLink>
       <nav
         class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
       >
@@ -62,7 +63,8 @@ import { RouterLink, RouterView } from "vue-router";
     <div
       class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"
     >
-      <a
+      <RouterLink
+        to="/"
         class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
       >
         <svg
@@ -80,7 +82,7 @@ import { RouterLink, RouterView } from "vue-router";
           ></path>
         </svg>
         <span class="ml-3 text-xl">HookSnap</span>
-      </a>
+      </RouterLink>
       <p
         class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"
       >
